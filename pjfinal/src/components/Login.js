@@ -46,7 +46,7 @@ const Login = () => {
         payload: OTP
       });
       axios
-        .post("http://192.168.15.227:8000/api/send_recovery_email", {
+        .post("http://192.168.15.227:8001/api/send_recovery_email", {
           OTP,
           recipient_email: email,
         })
@@ -93,7 +93,7 @@ const Login = () => {
         if (newPassword === confirmNewPassword) {
             console.log("Reset Password:", newPassword);
             axios
-            .post(`http://192.168.15.227:8000/api/resetpassword`, { email, newPassword })
+            .post(`http://192.168.15.227:8001/api/resetpassword`, { email, newPassword })
             .then(response => {
                 Swal.fire(response.data.message);
                 
@@ -132,7 +132,7 @@ const Login = () => {
   };
   const Formsummit = async () => {
     try {
-      const response = await axios.post(`http://192.168.15.227:8000/api/login`, { username, password });
+      const response = await axios.post(`http://192.168.15.227:8001/api/login`, { username, password });
   
       if (response) {
         console.log(response.data.token);
