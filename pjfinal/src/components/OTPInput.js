@@ -15,7 +15,7 @@ const OTPInput = () => {
   function resendOTP() {
     if (disable) return;
     axios
-      .post("http://localhost:5000/send_recovery_email", {
+      .post("http://192.168.15.227:5000/send_recovery_email", {
         OTP: otp,
         recipient_email: email,
       })

@@ -222,7 +222,7 @@ exports.share = async (req, res) => {
               payload = {'user_id': usershare, 'project_id': project_name,
               'project_name': [[projectName]], 'username': [[username]]}
           const token = jwt.sign(payload, 'jwtSecret', { algorithm: 'HS256' });
-          link = `http://localhost:3000/edit-project?Share=${token}`
+          link = `http://192.168.15.227:3000/edit-project?Share=${token}`
           console.log(link)
           sendEmail2(tyoemail,link)
           

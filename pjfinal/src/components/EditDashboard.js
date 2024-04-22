@@ -179,7 +179,7 @@ const EditDashboard = (props) => {
           const fetchData = async () => {
             try {
         
-                const response = await axios.get(`http://localhost:5000/edit-Dashboard?Share=${token}`, {
+                const response = await axios.get(`http://192.168.15.227:5000/edit-Dashboard?Share=${token}`, {
                   headers: {
                     Authorization: `Bearer ${tokenuser}`,
                     'Access-Control-Allow-Origin' : '*',
@@ -804,7 +804,7 @@ const sendSeverityToAPI = async (vulnerability, newSeverity) => {
   try {
     await  
       axios.put(
-          `http://localhost:5000/updateeditSeverity`,
+          `http://192.168.15.227:5000/updateeditSeverity`,
           {
             vulnerability,
             newSeverity,
@@ -838,7 +838,7 @@ const handleDelete = async (iddelete) => {
 
     if (result.isConfirmed) {
       await
-      axios.delete(`http://localhost:5000/edit_oneSeverity?project_name_id=${token}&record=${iddelete}`,{
+      axios.delete(`http://192.168.15.227:5000/edit_oneSeverity?project_name_id=${token}&record=${iddelete}`,{
                   headers:{
                     Authorization:`Bearer ${tokenuser}`,
                     'Access-Control-Allow-Origin' : '*',

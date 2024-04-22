@@ -31,7 +31,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/home`, {
+        const response = await axios.get(`http://192.168.15.227:5000/home`, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Access-Control-Allow-Origin": "*",
@@ -74,7 +74,7 @@ const Home = () => {
 
       if (result.isConfirmed) {
         const response = await axios.delete(
-          `http://localhost:5000/onedelete?project_name_id=${id}`,
+          `http://192.168.15.227:5000/onedelete?project_name_id=${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

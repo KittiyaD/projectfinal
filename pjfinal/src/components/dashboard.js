@@ -190,7 +190,7 @@ const Dashboard = (props) => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/dashboard?project_name_id=${project_name_id}`,
+        `http://192.168.15.227:5000/dashboard?project_name_id=${project_name_id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -901,7 +901,7 @@ const Dashboard = (props) => {
   const sendSeverityToAPI = async (vulnerability, newSeverity) => {
     try {
       await axios.put(
-        `http://localhost:5000/updateSeverity`,
+        `http://192.168.15.227:5000/updateSeverity`,
         {
           project_name_id,
           vulnerability,
@@ -955,7 +955,7 @@ const Dashboard = (props) => {
 
       if (result.isConfirmed) {
         await axios.delete(
-          `http://localhost:5000/oneSeverity?project_name_id=${project_name_id}&record=${iddelete}`,
+          `http://192.168.15.227:5000/oneSeverity?project_name_id=${project_name_id}&record=${iddelete}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

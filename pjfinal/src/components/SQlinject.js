@@ -79,7 +79,7 @@ const SQlinject = (props) => {
     const token = localStorage.getItem('token')
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/onedata?project_name_id=${project_name_id}`, {
+        const response = await axios.get(`http://192.168.15.227:5000/onedata?project_name_id=${project_name_id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -406,7 +406,7 @@ setresponsedata3(responsedata2)
   //   });
   // } 
       try {
-        await axios.post(`http://localhost:5000/addIssue`, {urls, EVIDENCE, Risk, Recommendation, OID, project_name_id},
+        await axios.post(`http://192.168.15.227:5000/addIssue`, {urls, EVIDENCE, Risk, Recommendation, OID, project_name_id},
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -455,7 +455,7 @@ setresponsedata3(responsedata2)
 //   });
 // } 
     try {
-      await axios.post(`http://localhost:5000/addIssueActive`, {urls, EVIDENCE, Risk, Recommendation, OID, project_name_id,vul_urls,parameter},
+      await axios.post(`http://192.168.15.227:5000/addIssueActive`, {urls, EVIDENCE, Risk, Recommendation, OID, project_name_id,vul_urls,parameter},
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -589,7 +589,7 @@ setresponsedata3(responsedata2)
     const sendSeverityToAPI = async (vulnerability, newSeverity) => {
       try {
         const response = await axios.put(
-          `http://localhost:5000/updateSeverityURL`,
+          `http://192.168.15.227:5000/updateSeverityURL`,
           {
             project_name_id,
             vulnerability,
@@ -643,7 +643,7 @@ setresponsedata3(responsedata2)
           });
     
           if (result.isConfirmed) {
-            await axios.delete(`http://localhost:5000/oneVulsdelete?project_name_id=${project_name_id}&record=${iddelete}`, {
+            await axios.delete(`http://192.168.15.227:5000/oneVulsdelete?project_name_id=${project_name_id}&record=${iddelete}`, {
               headers: {
                 Authorization: `Bearer ${token}`,
               },
@@ -682,7 +682,7 @@ setresponsedata3(responsedata2)
         const project_name = project_name_id;
     
         try {
-            const response = await axios.post(`http://localhost:8000/api/share`, { project_name, usershare }, {
+            const response = await axios.post(`http://192.168.15.227:8000/api/share`, { project_name, usershare }, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

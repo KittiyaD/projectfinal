@@ -45,7 +45,7 @@ const ProjectDashAdmin = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/Admin`, {
+        const response = await axios.get(`http://192.168.15.227:5000/Admin`, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Access-Control-Allow-Origin' : '*',
@@ -80,7 +80,7 @@ const ProjectDashAdmin = () => {
     try {
       console.log(`4${Owasp}`);
       setPay(Owasp)
-      const response = await axios.post(`http://localhost:5000/payload4`, { Owasp }, {
+      const response = await axios.post(`http://192.168.15.227:5000/payload4`, { Owasp }, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Access-Control-Allow-Origin': '*',
@@ -131,7 +131,7 @@ const ProjectDashAdmin = () => {
   
     if (result.isConfirmed) {     
       try {
-        const response = await axios.post(`http://localhost:5000/payload5`, { payloadone, Owasp }, {
+        const response = await axios.post(`http://192.168.15.227:5000/payload5`, { payloadone, Owasp }, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Access-Control-Allow-Origin': '*',
@@ -193,7 +193,7 @@ const handleSubmit = async (event) => {
   if (result.isConfirmed) {
     if (selectedFile && inputKey) {
       try {
-        const response = await axios.post(`http://localhost:5000/payload3`, { selectedFile, Owasp, inputKey }, {
+        const response = await axios.post(`http://192.168.15.227:5000/payload3`, { selectedFile, Owasp, inputKey }, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Access-Control-Allow-Origin': '*',

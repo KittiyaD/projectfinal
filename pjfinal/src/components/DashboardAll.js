@@ -32,7 +32,7 @@ const DashboardAll = () => {
   useEffect(() => {
     const token = localStorage.getItem("token")
     console.log(token)
-    axios.get(`http://localhost:5000/DashboardAll`, {
+    axios.get(`http://192.168.15.227:5000/DashboardAll`, {
       headers: {
         Authorization: `Bearer ${token}`,
         'Access-Control-Allow-Origin' : '*',

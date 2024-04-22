@@ -9,7 +9,7 @@
 //     //ส่งเปนtokenแทน
 //     const user = localStorage.user
 //     useEffect(() => {
-//         axios.get(`http://localhost:5000/onedata?user=${user}&project_name=${project_name_id }`)
+//         axios.get(`http://192.168.15.227:5000/onedata?user=${user}&project_name=${project_name_id }`)
 //             .then(response => {
 //                 setProjectOneData(response.data.crawl_data);
 //                 console.log(response.data)                  
